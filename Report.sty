@@ -33,6 +33,12 @@
 \usepackage{xcolor}
 \usepackage{amssymb}
 
+% 字体设置
+% 设置中文字体为宋体
+\setCJKmainfont{simsun.ttc}
+% 设置英文字体为Times New Roman
+\setmainfont{Times New Roman}
+
 
 % A4 页边距 
 \geometry{a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm}
@@ -47,7 +53,6 @@
  keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
  numberstyle=\footnotesize\color{darkgray},           
  commentstyle=\color{red!50!green!50!blue!50},        % 设置代码注释的格式
-%  stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
  showstringspaces=false,                              % 不显示字符串中的空格
  language=c++,                                        % 设置语言
  basicstyle=\ttfamily,
@@ -55,7 +60,7 @@
 }
 
 % 行间距
-\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\baselinestretch}{1.33}
 
 % 页码
 \pagestyle{fancy}
