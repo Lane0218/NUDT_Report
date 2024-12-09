@@ -23,7 +23,10 @@
 \usepackage{fancyhdr}
 \usepackage{float}
 \usepackage{geometry}
+
 \usepackage{graphicx}
+%\usepackage[draft]{graphicx}
+
 \usepackage{multicol}
 \usepackage{subfigure}
 \usepackage{tabularx}
@@ -33,9 +36,15 @@
 \usepackage{xcolor}
 \usepackage{amssymb}
 
+% 取消压缩，可以加速编译过程，最后输出正式版PDF的时候需要注释掉这一行。
+\special{dvipdfmx:config z 0} 
+
+\captionsetup[figure]{labelsep=space} %去除图标题的冒号
+\captionsetup[table]{labelsep=space} %去除表格标题的冒号
+
 % 字体设置
 % 设置中文字体为宋体
-\setCJKmainfont{simsun.ttc}
+\setCJKmainfont{FandolSong}
 % 设置英文字体为Times New Roman
 \setmainfont{Times New Roman}
 
@@ -46,19 +55,18 @@
 % 代码块样式
 \lstset{
  columns=fixed,       
- numbers=left,                                        % 在左侧显示行号
- numberstyle=\tiny\color{gray},                       % 设定行号格式
+ % numbers=left,                                        % 在左侧显示行号
+ % numberstyle=\tiny\color{gray},                       % 设定行号格式
  frame=single,                                        % 设定背景边框
- backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
- keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+ backgroundcolor=\color[RGB]{240,240,240},            % 设定背景颜色
+ % keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
  numberstyle=\footnotesize\color{darkgray},           
  commentstyle=\color{red!50!green!50!blue!50},        % 设置代码注释的格式
  showstringspaces=false,                              % 不显示字符串中的空格
- language=c++,                                        % 设置语言
+ % language=bash,                                        % 设置语言
  basicstyle=\ttfamily,
  breaklines=true
 }
-
 % 行间距
 \renewcommand{\baselinestretch}{1.33}
 
@@ -72,8 +80,9 @@
 % 四级标题
 \titleformat{\section}[block]{\heiti\zihao{4}}{\chinese{section}、}{1em}{}[]
 \titleformat{\subsection}[block]{\heiti\zihao{-4}}{（\chinese{subsection}）}{1em}{}[]
-\titleformat{\subsubsection}[block]{\heiti\zihao{-4}}{\arabic{subsubsection}.}{1em}{}[]
-\titleformat{\paragraph}[block]{\songti\zihao{-4}}{（\arabic{section}）}{1em}{}[]
+\titleformat{\subsubsection}[block]{\heiti\zihao{-4}}{\ \ \ \  \arabic{subsubsection}.}{1em}{}[]
+\titleformat{\paragraph}[block]
+{\heiti\zihao{-4}}{\ \ \ \ \ \ (\arabic{paragraph})}{0.6em}{}[]
 
 % 有序列表
 \setlist[enumerate,1]{label=\arabic*.}
